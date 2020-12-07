@@ -80,24 +80,17 @@ while lV < quantDig:
 #lógica do cálculo - Não finalizada
 valoresLen = len(valores)
 
-if operacao == 1:
-
+def soma():
     while valoresLen >= 1:
         valor1 = valores.pop()
 
         if valoresLen > 1:
             valor2 = valores.pop()
         
-        calc = valor1 + valor2
-        valoresF.append(calc)
+            calc = valor1 + valor2
+            valoresF.append(calc)
 
-        print(valoresF)
+print(valoresF)
 
-elif operacao == 2:
-    print("Ainda não definido.")
-
-else:
-    print("Erro no cálculo")
-
-#printa valores em tela
-#print(valoresF)
+if operacao == 1:
+    soma()
