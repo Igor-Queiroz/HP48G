@@ -33,6 +33,24 @@ while vInt == False:
             except ValueError:
                 print("Valor inválido. Insira um novo valor.")
 
+#salva valores digitados no array
+while lV < quantDig:
+    valorN = input("Insira o " + str(lV + 1) + "° valor: ")
+
+    try: 
+        int(valorN)
+        valores.append(int(valorN))
+        lV+=1
+
+    except ValueError:
+        try:
+            float(valorN)
+            valores.append(float(valorN))
+            lV+=1
+
+        except ValueError:
+            print("Valor inválido. Insira um novo valor.")
+
 #mostra as operações
 while lO < 4:
     print(operacoes.pop(0))
@@ -59,38 +77,38 @@ while operadorVal == False:
             except ValueError:
                 print("Valor inválido. Insira um novo valor.")
 
-#salva valores digitados no array
-while lV < quantDig:
-    valorN = input("Insira o " + str(lV + 1) + "° valor: ")
-
-    try: 
-        int(valorN)
-        valores.append(int(valorN))
-        lV+=1
-
-    except ValueError:
-        try:
-            float(valorN)
-            valores.append(float(valorN))
-            lV+=1
-
-        except ValueError:
-            print("Valor inválido. Insira um novo valor.")
-
 #lógica do cálculo - Não finalizada
-valoresLen = len(valores)
 
 def soma():
-    while valoresLen >= 1:
+    while len(valores) >= 1:
         valor1 = valores.pop()
 
-        if valoresLen > 1:
+        if len(valores) > 1:
             valor2 = valores.pop()
         
             calc = valor1 + valor2
             valoresF.append(calc)
+            
+        print(valoresF)
 
-print(valoresF)
+def subtracao():
+    print("Não definido")
+
+def multiplicacao():
+    print("Não definido")
+
+def divisao():
+    print("Não definido")
+
 
 if operacao == 1:
     soma()
+
+elif operacao == 2:
+    subtracao()
+
+elif operacao == 3:
+    multiplicacao()
+
+elif operacao == 4:
+    divisao()
