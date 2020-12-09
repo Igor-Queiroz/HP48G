@@ -8,9 +8,6 @@ valorFinal = 0
 lV = 0
 lO = 0
 operadorVal = False
-valoresF = []
-valor1 = 0
-valor2 = 0
 
 #filtro de entrada (valor)
 while vInt == False:
@@ -77,38 +74,48 @@ while operadorVal == False:
             except ValueError:
                 print("Valor inválido. Insira um novo valor.")
 
-#lógica do cálculo - Não finalizada
-
+#lógica do cálculo
 def soma():
-    while len(valores) >= 1:
-        valor1 = valores.pop()
-
-        if len(valores) > 1:
-            valor2 = valores.pop()
-        
-            calc = valor1 + valor2
-            valoresF.append(calc)
+    while len(valores) > 1:
+        calc = valores.pop() + valores.pop()
+        valores.append(calc)
             
-        print(valoresF)
+    if len(valores) == 1: print("Resultado: " + str(valores[0]))
 
-def subtracao():
-    print("Não definido")
+#Não finalizado
+#def subtracao():
+    while len(valores) > 1:
+        calc = valores.pop() - valores.pop()
+        valores.append(calc)
+            
+    if len(valores) == 1: print("Resultado: " + str(valores[0]))
 
 def multiplicacao():
-    print("Não definido")
+    while len(valores) > 1:
+        calc = valores.pop() * valores.pop()
+        valores.append(calc)
+            
+    if len(valores) == 1: print("Resultado: " + str(valores[0]))
 
-def divisao():
-    print("Não definido")
+#Não finalizado
+#def divisao():
+    while len(valores) > 1:
+        calc = valores.pop() / valores.pop()
+        valores.append(calc)
+            
+    if len(valores) == 1: print("Resultado: " + str(valores[0]))
 
 
 if operacao == 1:
     soma()
 
 elif operacao == 2:
-    subtracao()
+    #subtracao()
+    print("Não definido")
 
 elif operacao == 3:
     multiplicacao()
 
 elif operacao == 4:
-    divisao()
+    #divisao()
+    print("Não definido")
