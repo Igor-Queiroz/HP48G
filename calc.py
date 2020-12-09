@@ -2,12 +2,14 @@
 valores = []
 vInt = False
 quantDig = 0
-operacoes = ["1 - Soma", "2 - Subtração", "3 - Multiplicação", "4 - Divisão"]
+operacoes = ["1 para Soma", "2 para Subtração", "3 para Multiplicação", "4 para Divisão"]
 operacao = 0
 valorFinal = 0
 lV = 0
 lO = 0
 operadorVal = False
+
+print("CÁLCULADORA HP48G")
 
 #filtro de entrada (valor)
 while vInt == False:
@@ -30,7 +32,7 @@ while vInt == False:
             except ValueError:
                 print("Valor inválido. Insira um novo valor.")
 
-#salva valores digitados no array
+#salva valores digitados pelo usuário no array
 while lV < quantDig:
     valorN = input("Insira o " + str(lV + 1) + "° valor: ")
 
@@ -48,7 +50,7 @@ while lV < quantDig:
         except ValueError:
             print("Valor inválido. Insira um novo valor.")
 
-#mostra as operações
+#mostra as operações disponíveis
 while lO < 4:
     print(operacoes.pop(0))
     lO+=1
@@ -79,43 +81,38 @@ def soma():
     while len(valores) > 1:
         calc = valores.pop() + valores.pop()
         valores.append(calc)
-            
-    if len(valores) == 1: print("Resultado: " + str(valores[0]))
 
 #Não finalizado
-#def subtracao():
+def subtracao():
     while len(valores) > 1:
         calc = valores.pop() - valores.pop()
         valores.append(calc)
-            
-    if len(valores) == 1: print("Resultado: " + str(valores[0]))
 
 def multiplicacao():
     while len(valores) > 1:
         calc = valores.pop() * valores.pop()
         valores.append(calc)
-            
-    if len(valores) == 1: print("Resultado: " + str(valores[0]))
 
 #Não finalizado
-#def divisao():
+def divisao():
     while len(valores) > 1:
         calc = valores.pop() / valores.pop()
         valores.append(calc)
-            
-    if len(valores) == 1: print("Resultado: " + str(valores[0]))
-
 
 if operacao == 1:
     soma()
+    print("Resultado: " + str(valores[0]))
 
 elif operacao == 2:
     #subtracao()
     print("Não definido")
+    #print("Resultado: " + str(valores[0]))
 
 elif operacao == 3:
     multiplicacao()
+    print("Resultado: " + str(valores[0]))
 
 elif operacao == 4:
-    #divisao()
-    print("Não definido")
+    divisao()
+    #print("Não definido")
+    print("Resultado: " + str(valores[0]))
